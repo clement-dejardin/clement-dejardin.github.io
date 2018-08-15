@@ -3,7 +3,7 @@ body {
     background: url('http://desktopwallpaper.info/wp-content/uploads/2018/03/cute-unicorn-wallpaper-hd.jpg');
     font-family: "Shrikhand";
     min-height: 100vh;
-    min width: 100vw;
+    min-width: 100vw;
     display: flex;
     justify-content: center;
     font-size: 200%;
