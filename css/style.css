@@ -9,8 +9,8 @@ body {
 }
 
 h1 {
-  background: linear-gradient(to right, orange , yellow, green, cyan, blue, violet);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding: 0 5%;
+    background: linear-gradient(to right, rgb(107, 195, 242), rgb(145, 241, 73), rgb(247, 131, 80), rgb(223, 52, 114) );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0 5%;
 }
