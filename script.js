@@ -1,16 +1,10 @@
-let btn = document.getElementById('btn')
-let content = document.getElementById('content')
-let text = ""
-
-btn.addEventListener('click', function(){
-    var request = new XMLHttpRequest
-    request.open('GET', 'https://clement-dejardin.github.io/data.json')
-    request.onload = function() {
-        var data = JSON.parse(request.responseText)
-        renderHtml(data)
-    }
-    request.send()
-})
+// Get data
+endpoint = 'https://clement-dejardin.github.io/data.json'
+const data = []
+fetch(endpoint)
+.then(blob => blob.json())
+.then(stuff => data.push(...stuff))
+console.log(data)
 
 function renderHtml(data) {
     for (i = 1; i < data.length; i++) {
