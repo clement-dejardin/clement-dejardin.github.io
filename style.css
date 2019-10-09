@@ -30,9 +30,15 @@ p {
 
 .search {
     display: grid;
+    margin: 0 auto;
+    max-width: 600px;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     align-items: center;
+}
+
+.search p {
+    font-size: 125%;
 }
 
 .content > div {
