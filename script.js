@@ -16,3 +16,18 @@ function findMatches(city1, city2, data) {
         && (place.Departure.match(regex2) || place.Arrival.match(regex2))
     })
 }
+
+// Dispay the result
+
+function displayMatches() {
+    console.log(this.value)
+}
+
+const searchInputCity1 = document.querySelector('.city1')
+const searchInputCity2 = document.querySelector('.city2')
+
+// Run matches when typing in input
+searchInputCity1.addEventListener('change', displayMatches)
+searchInputCity2.addEventListener('change', displayMatches)
+searchInputCity1.addEventListener('keyup', displayMatches)
+searchInputCity2.addEventListener('keyup', displayMatches)
