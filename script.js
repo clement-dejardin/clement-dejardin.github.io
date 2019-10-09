@@ -5,22 +5,52 @@ fetch(endpoint)
     .then(blob => blob.json())
     .then(stuff => data.push(...stuff))
 
-    console.log(data)
+console.log(data)
 
 // Search between 2 city
 function findMatches(city1, city2, data) {
     return data.filter(place => {
         const regex1 = new RegExp(city1, 'gi')
         const regex2 = new RegExp(city2, 'gi')
-        return (place.Departure.match(regex1) || place.Arrival.match(regex1))
-        && (place.Departure.match(regex2) || place.Arrival.match(regex2))
+        return (place.Departure.match(regex1) || place.Arrival.match(regex1)) &&
+            (place.Departure.match(regex2) || place.Arrival.match(regex2))
     })
 }
 
 // Dispay the result
 
 function displayMatches() {
-    const matchArray = findMatches(searchInputCity1.value, searchInputCity2 ,data)
+    const matchArray = findMatches(searchInputCity1.value, searchInputCity2.value, data)
+    const html = matchArray.map(place => {
+        return `
+        <div>
+        <p>
+        ${place.Departure} ➜ ${place.Arrival} ⏱ ${place.Flight_time}
+        </p>
+            <div>
+                <div>
+                    <p>
+                    Airline : ${place.Airline}
+                    </p>
+                    <p>
+                    Helicopter : ${place.Helicopter}
+                    </p>
+                </div>
+                <div>
+                    <p>
+                    Single Pilot :<br>
+                    ${place.Single_pilot} ${place.Currency}
+                    </p>
+                    <p>
+                    Double Pilot :<br>
+                    ${place.Double_pilot} ${place.Currency}
+                    </p>
+                </div>
+            </div>
+        </div>
+        `
+    }).join('')
+    document.querySelector('.content').innerHTML = html
     console.log(matchArray)
 }
 
