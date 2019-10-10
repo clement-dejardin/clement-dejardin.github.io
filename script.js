@@ -18,6 +18,7 @@ function findMatches(city1, city2, data) {
 // Dispay the result
 function displayMatches() {
     const matchArray = findMatches(searchInputCity1.value, searchInputCity2.value, data)
+    // Sort matchArray by price
     const html = matchArray.map(place => {
         return `
         <div>
@@ -44,8 +45,7 @@ function displayMatches() {
                     </p>
                 </div>
             </div>
-        </div>
-        `
+        </div>`
     }).join('')
     document.querySelector('.content').innerHTML = html
 }
