@@ -5,6 +5,13 @@ fetch(endpoint)
     .then(blob => blob.json())
     .then(stuff => data.push(...stuff))
 
+// Sorting function
+var sortBy = function (property) {
+    return function (x, y) {
+        return ((x[property] === y[property]) ? 0 : ((x[property] > y[property]) ? 1 : -1));
+    };
+};
+
 // Search between 2 city
 function findMatches(city1, city2, data) {
     return data.filter(place => {
@@ -19,6 +26,7 @@ function findMatches(city1, city2, data) {
 function displayMatches() {
     const matchArray = findMatches(searchInputCity1.value, searchInputCity2.value, data)
     // Sort matchArray by price
+    matchArray.sort(sortBy('Single_pilot'))
     const html = matchArray.map(place => {
         return `
         <div>
