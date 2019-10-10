@@ -1,3 +1,10 @@
+// Get data
+endpoint = 'https://clement-dejardin.github.io/data.json'
+const data = []
+fetch(endpoint)
+    .then(blob => blob.json())
+    .then(stuff => data.push(...stuff))
+
 // Search between 2 city
 function findMatches(city1, city2, data) {
     return data.filter(place => {
@@ -42,13 +49,6 @@ function displayMatches() {
     }).join('')
     document.querySelector('.content').innerHTML = html
 }
-
-// Get data
-endpoint = 'https://clement-dejardin.github.io/data.json'
-const data = []
-fetch(endpoint)
-    .then(blob => blob.json())
-    .then(stuff => data.push(...stuff))
 
 // Run matches when typing in input
 const searchInputCity1 = document.querySelector('.city1')
