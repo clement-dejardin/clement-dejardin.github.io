@@ -1,17 +1,5 @@
 [
    {
-     "Departure": "Clément",
-     "Arrival": "Dejardin",
-     "Airline": "Azur Helicopter",
-     "Helicopter": "AS350",
-     "Single_pilot": 5555,
-     "Single_pilot_capacity": 5,
-     "Double_pilot": 6666,
-     "Currency": "€",
-     "Double_pilot_capacity": 4,
-     "Flight_time": "00:23"
-   },
-   {
      "Departure": "Annecy",
      "Arrival": "Chambery",
      "Airline": "Azur Helicopter",
