@@ -17,8 +17,7 @@ function findMatches(city1, city2, data) {
     return data.filter(place => {
         const regex1 = new RegExp(city1, 'gi')
         const regex2 = new RegExp(city2, 'gi')
-        return (place.Departure.match(regex1) || place.Arrival.match(regex1)) &&
-            (place.Departure.match(regex2) || place.Arrival.match(regex2))
+        return place.Departure.match(regex1) && place.Arrival.match(regex2)
     })
 }
 
