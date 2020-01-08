@@ -29,30 +29,147 @@ function displayMatches() {
     const html = matchArray.map(place => {
         return `
         <div>
-        <p>
-        ${place.Departure} ➜ ${place.Arrival} ⏱ ${place.Flight_Time}
-        </p>
-            <div>
-                <div>
-                    <p>
-                    Airline : ${place.Operator}
-                    </p>
-                    <p>
-                    Helicopter : ${place.Helicopter}
-                    </p>
-                </div>
-                <div>
-                    <p>
-                    Single Pilot :<br>
-                    ${place.Single_pilot} ${place.Currency}
-                    </p>
-                    <p>
-                    Double Pilot :<br>
-                    ${place.Double_pilot} ${place.Currency}
-                    </p>
-                </div>
+        <div>
+            <h1>${place.Operator}</h1>
+            <table class="from-to">
+                <tr>
+                    <td>
+                        <div class="icon-text">
+                            <div>
+                                🛫
+                            </div>
+                            <div>
+                                <b>From</b> <br>
+                                ${place.Departure}
+                            </div>
+                        </div>
+                        <div class="icon-text">
+                            <div>
+                                🅷
+                            </div>
+                            <div>
+                                <a href="${place.Departure_Coord}" target="_blank">${place.Departure_Helistation}
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="icon-text">
+                            <div>
+                                ⏱
+                            </div>
+                            <div>
+                                <b>Flight Time</b> <br>
+                                ${place.Flight_Time}
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="icon-text">
+                            <div>
+                                🛫
+                            </div>
+                            <div>
+                                <b>To</b> <br>
+                                ${place.Arrival}
+                            </div>
+                        </div>
+                        <div class="icon-text">
+                            <div>
+                                🅷
+                            </div>
+                            <div>
+                                <a href="${place.Arrival_Coord}" target="_blank">${place.Arrival_Helistation}
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+    
+            <div style="margin: 0 1em">
+                <hr>
             </div>
-        </div>`
+    
+            <div class="info">
+                <div class="helicopter-info">
+                    <div class="icon-text">
+                        <div>
+                            🚁
+                        </div>
+                        <div>
+                            <b>Helicopter Type</b> <br>
+                            ${place.Helicopter}
+                        </div>
+                    </div>
+                    
+                    <div class="icon-text">
+                        <div>
+                             👨‍✈ 
+                        </div>
+                        <div>
+                            <b>Nbr of Pilot</b> <br>
+                            ${place.Pilot}
+                        </div>
+                    </div>
+    
+                    <div class="icon-text">
+                        <div>
+                            👨 
+                        </div>
+                        <div>
+                            <b>Nbr of Pax</b> <br>
+                            ${place.Pax}
+                        </div>
+                    </div>
+    
+                    <div class="icon-text">
+                        <div>
+                            💼 
+                        </div>
+                        <div>
+                            <b>Nbr of Pax</b> <br>
+                            ${place.Luggages}
+                        </div>
+                    </div>
+    
+                    <div class="icon-text">
+                        <div>
+                            🎿 
+                        </div>
+                        <div>
+                            <b>Ski / Snowboard</b> <br>
+                            ${place.Skis}
+                        </div>
+                    </div>
+                </div>
+    
+                <table class="price">
+                    <tr>
+                        <td><b>Official Price</b></td>
+                        <td>${place.Price} ${place.Currency}</td>
+                    </tr>
+                    <tr>
+                        <td><b>LunaJets Discount</b></td>
+                        <td>${place.Discount}</td>
+                    </tr>
+                    <tr>
+                        <td><b>LunaJets Price</b></td>
+                        <td>${place.Price_Discounted} ${place.Currency}</td>
+                    </tr>
+                </table>
+            </div>
+    
+        </div>
+        <div>
+            <img src="${place.Picture}">
+            <p>
+                📞 <a href="tel:${place.Phone}">${place.Phone}
+            </p>
+            <p>
+                📧 <a href="mailto:${place.Email}">${place.Email}</a>
+            </p>
+        </div>
+    </div>
+        `
     }).join('')
     document.querySelector('.content').innerHTML = html
 }

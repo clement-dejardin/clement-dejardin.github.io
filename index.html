@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="robots" content="noindex">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -16,27 +16,40 @@
 
 <body>
     <div class="head">
-        <h1>Helicopter finder</h1>
+        <h1>LunaCopter</h1>
 
         <div class="search">
             <div>
-                <p>🛫 Departure</p>
+                <p>🛫 From</p>
                 <input type="text" class="city1">
             </div>
 
             <div>
-                <p>🛬 Arrival</p>
+                <p>🛬 To</p>
                 <input type="text" class="city2">
             </div>
 
             <div>
-                <p>👨 Passenger</p>
-                <input type="number" class="pax" value="5">
+                <p>👨 Nbr of Pax</p>
+                <select class="pax">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
             </div>
             <div>
-
-                <p>👨‍✈ Pilot</p>
-                <input type="number" class="pilot" value="2">
+                <p>👨‍✈ Nbr of Pilot</p>
+                <select class="pilot">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                </select>
             </div>
         </div>
     </div>

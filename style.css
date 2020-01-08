@@ -3,11 +3,20 @@ html {
     background: #b6cada;
     color: #263d50;
     font-family: 'Open Sans';
-    font-size: 18;
-    font-weight: 600;
-  }
-  
-  input {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+b {
+    font-weight: 700;
+}
+
+input {
     width: 100%;
     padding: 10px;
     border: 0;
@@ -15,10 +24,22 @@ html {
     background: white;
     padding: 1em;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(30,30,30, .6)
-  }
+    box-shadow: 0 2px 5px rgba(30, 30, 30, .6)
+}
 
-h1 {
+select {
+    width: 100%;
+    height: 37px;
+    padding: 10px;
+    border: 0;
+    font-family: inherit;
+    background: white;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(30, 30, 30, .6)
+}
+
+.head h1 {
     text-align: center;
     font-size: 200%;
     font-size: 72px;
@@ -27,6 +48,10 @@ h1 {
 
 p {
     margin: .25em;
+}
+
+table {
+    width: 100%;
 }
 
 .search {
@@ -41,22 +66,50 @@ p {
     font-size: 125%;
 }
 
-.content > div {
+.search>div {
+    width: 80%;
+    max-width: 175px;
+}
+
+.content>div {
     background: white;
     padding: 1em;
     margin: 1em;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(30,30,30, .6);
-}
+    box-shadow: 0 2px 5px rgba(30, 30, 30, .6);
 
-.content > div > p {
-    font-size: 150%;
-    padding-bottom: .5em;
-    border-bottom: 2px solid gray;
-}
-
-.content > div > div {
     display: grid;
     grid-template-columns: 5fr 1fr;
+    justify-items: center;
+    align-items: top;
+}
+
+
+
+.content>div>div {
+    width: 100%;
+}
+
+.icon-text {
+    display: flex;
     align-items: center;
+}
+
+.icon-text>div:first-of-type {
+    font-size: 2em;
+    padding: 0 .5em;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    align-items: center;
+}
+
+.from-to {
+    font-size: 110%;
+}
+
+.price {
+    font-size: 125%;
 }
