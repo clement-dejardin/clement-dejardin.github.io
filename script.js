@@ -85,7 +85,7 @@ function displayMatches() {
                 </tr>
             </table>
     
-            <div style="margin: 1em">
+            <div style="margin: 2em 1em">
                 <hr>
             </div>
     
