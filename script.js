@@ -85,7 +85,7 @@ function displayMatches() {
                 </tr>
             </table>
     
-            <div style="margin: 0 1em">
+            <div style="margin: 1em">
                 <hr>
             </div>
     
@@ -116,7 +116,7 @@ function displayMatches() {
                             👨 
                         </div>
                         <div>
-                            <b>Nbr of Pax</b> <br>
+                            <b>Max Nbr of Pax</b> <br>
                             ${place.Pax}
                         </div>
                     </div>
@@ -126,7 +126,7 @@ function displayMatches() {
                             💼 
                         </div>
                         <div>
-                            <b>Nbr of Pax</b> <br>
+                            <b> Max Nbr of Luggages</b> <br>
                             ${place.Luggages}
                         </div>
                     </div>
