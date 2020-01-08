@@ -13,11 +13,11 @@ var sortBy = function (property) {
 };
 
 // Search between 2 city
-function findMatches(city1, city2, data) {
+function findMatches(city1, city2 ,data) {
     return data.filter(place => {
         const regex1 = new RegExp(city1, 'gi')
         const regex2 = new RegExp(city2, 'gi')
-        return place.Departure.match(regex1) && place.Arrival.match(regex2)
+        return place.Departure.match(regex1) && place.Arrival.match(regex2) && place.Pax >= searchInputPax.value && place.Pilot == searchInputPilot.value
     })
 }
 
@@ -30,12 +30,12 @@ function displayMatches() {
         return `
         <div>
         <p>
-        ${place.Departure} ➜ ${place.Arrival} ⏱ ${place.Flight_time}
+        ${place.Departure} ➜ ${place.Arrival} ⏱ ${place.Flight_Time}
         </p>
             <div>
                 <div>
                     <p>
-                    Airline : ${place.Airline}
+                    Airline : ${place.Operator}
                     </p>
                     <p>
                     Helicopter : ${place.Helicopter}
@@ -60,8 +60,15 @@ function displayMatches() {
 // Run matches when typing in input
 const searchInputCity1 = document.querySelector('.city1')
 const searchInputCity2 = document.querySelector('.city2')
+const searchInputPax = document.querySelector('.pax')
+const searchInputPilot = document.querySelector('.pilot')
 
 searchInputCity1.addEventListener('change', displayMatches)
 searchInputCity2.addEventListener('change', displayMatches)
+searchInputPax.addEventListener('change', displayMatches)
+searchInputPilot.addEventListener('change', displayMatches)
+
+searchInputCity2.addEventListener('change', displayMatches)
 searchInputCity1.addEventListener('keyup', displayMatches)
-searchInputCity2.addEventListener('keyup', displayMatches)
+searchInputPax.addEventListener('keyup', displayMatches)
+searchInputPilot.addEventListener('keyup', displayMatches)

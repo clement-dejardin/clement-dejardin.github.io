@@ -1,6 +1,7 @@
 html {
     box-sizing: border-box;
-    background: #ffc600;
+    background: #b6cada;
+    color: #263d50;
     font-family: 'Open Sans';
     font-size: 18;
     font-weight: 600;
@@ -21,7 +22,7 @@ h1 {
     text-align: center;
     font-size: 200%;
     font-size: 72px;
-    margin: 0
+    margin: 0 0 .5em 0
 }
 
 p {
@@ -31,8 +32,7 @@ p {
 .search {
     display: grid;
     margin: 0 auto;
-    max-width: 600px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
 }
