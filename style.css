@@ -95,7 +95,8 @@ table {
 .advanced-search {
     display: grid;
     margin: 1em 0;
-    grid-template-columns: 6fr 2fr;
+    grid-template-columns: 1fr 300px;
+    gap: 1em;
 }
 
 .filter {
@@ -106,6 +107,14 @@ table {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1em;
+}
+
+.price {
+    background: white;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(30, 30, 30, .6);
+    display: grid;
 }
 
 .content>div {

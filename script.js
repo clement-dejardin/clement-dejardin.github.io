@@ -25,10 +25,10 @@ function findMatches(city1, city2 ,data) {
 function displayMatches() {
     const matchArray = findMatches(searchInputCity1.value, searchInputCity2.value, data)
     // Sort matchArray by price
-    matchArray.sort(sortBy('Single_pilot'))
+    matchArray.sort(sortBy('Single_Pilot_Official_Price'))
     const html = matchArray.map(place => {
         return `
-        <div>
+    <div>
         <div>
             <h1>${place.Operator}</h1>
             <table class="from-to">
@@ -174,18 +174,11 @@ function displayMatches() {
     document.querySelector('.content').innerHTML = html
 }
 
-// Run matches when typing in input
+// Run displayMatches when typing in input
 const searchInputCity1 = document.querySelector('.city1')
 const searchInputCity2 = document.querySelector('.city2')
-const searchInputPax = document.querySelector('.pax')
-const searchInputPilot = document.querySelector('.pilot')
 
 searchInputCity1.addEventListener('change', displayMatches)
 searchInputCity2.addEventListener('change', displayMatches)
 searchInputPax.addEventListener('change', displayMatches)
 searchInputPilot.addEventListener('change', displayMatches)
-
-searchInputCity2.addEventListener('change', displayMatches)
-searchInputCity1.addEventListener('keyup', displayMatches)
-searchInputPax.addEventListener('keyup', displayMatches)
-searchInputPilot.addEventListener('keyup', displayMatches)
