@@ -57,27 +57,44 @@ p {
 table {
     width: 100%;
 }
+th {
+    font-weight: 300;
+    font-size: 80%;
+}
+td {
+    text-align: center;
+    font-weight: 600;
+}
 
-#search {
-    background: white;
+td:nth-of-type(2) {
+    color: #B51F24;
+}
+
+button {
+    border: 0;
+    background-color: #263d50;
+    color: white;
     padding: .5em 1em;
     margin: 1em;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(30, 30, 30, .6);
-    color: inherit;
     font: inherit;
     cursor: pointer;
 }
 
+.top-search {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    align-items: stretch;
+    gap: 1em;
+}
 
 .search {
     background: white;
     padding: 1em;
-    margin: 1em;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(30, 30, 30, .6);
     display: grid;
-    margin: 0 auto;
     grid-template-columns: 1fr 1fr 1fr;
     justify-items: center;
     align-items: center;
@@ -95,7 +112,6 @@ table {
 .advanced-search {
     display: grid;
     margin: 1em 0;
-    grid-template-columns: 1fr 300px;
     gap: 1em;
 }
 
@@ -117,26 +133,49 @@ table {
     display: grid;
 }
 
-.content>div {
+.row {
     background: white;
     padding: 1em;
-    margin: 1em;
+    margin: 1em 0;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(30, 30, 30, .6);
-
-    display: grid;
-    grid-template-columns: 5fr 1fr;
-    justify-items: center;
-    align-items: top;
 }
 
+.row .main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    justify-items: left;
+    align-items: center;
+}
+
+.row .secondary {
+    display: grid;
+    grid-template-columns: 1fr 1fr 200px;
+    align-items: center;
+}
+
+.row .secondary > div:nth-of-type(1) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.row .secondary > p {
+    padding: 1em;
+    font-size: 80%;
+}
+
+.row .secondary > div:nth-of-type(2) {
+    display: grid;
+    justify-items: center;
+    height: 100%;
+}
+
+.row .secondary img {
+    max-height: 100%;
+}
 
 .content h1 {
-    margin-top: 0;
-}
-
-.content>div>div {
-    width: 100%;
+    margin: 0;
 }
 
 .icon-text {
@@ -153,16 +192,9 @@ table {
     width: 100%;
 }
 
-.info {
-    display: grid;
-    grid-template-columns: 2fr 3fr;
-    align-items: center;
-}
-
-.from-to {
-    font-size: 110%;
-}
-
-.price {
-    font-size: 125%;
+.warning {
+    font-size: 50%;
+    color: #B51F24;
+    position: absolute;
+    font-weight: 600;
 }

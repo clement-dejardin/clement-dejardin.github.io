@@ -12,37 +12,56 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <title> Helicopter Finder</title>
+    <title>LunaCopter</title>
 </head>
 
 <body>
     <div class="head">
         <h1>LunaCopter</h1>
 
-        <div class="search">
-            <div class="icon-text">
-                <div>
-                    <i class="fas fa-fw fa-plane-departure"></i>
+        <div class="top-search">
+            <div class="search">
+                <div class="icon-text">
+                    <div>
+                        <i class="fas fa-fw fa-plane-departure"></i>
+                    </div>
+                    <div>
+                        <p> From</p>
+                        <input type="text" class="city1">
+                    </div>
                 </div>
-                <div>
-                    <p> From</p>
-                    <input type="text" class="city1">
+                <div class="icon-text">
+                    <div>
+                        <i class="fas fa-fw fa-plane-arrival"></i>
+                    </div>
+                    <div>
+                        <p> To</p>
+                        <input type="text" class="city2">
+                    </div>
                 </div>
-            </div>
-            <div class="icon-text">
-                <div>
-                    <i class="fas fa-fw fa-plane-arrival"></i>
-                </div>
-                <div>
-                    <p> To</p>
-                    <input type="text" class="city2">
-                </div>
-            </div>
 
-            <div>
                 <button id="search">Search</button>
+
             </div>
 
+            <div class="price">
+                <div class="icon-text">
+                    <div>
+                        <i class="fas fa-fw fa-sort-amount-down"></i>
+                    </div>
+                    <div>
+                        <p class="low-price">0 €</p>
+                    </div>
+                </div>
+                <div class="icon-text">
+                    <div>
+                        <i class="fas fa-fw fa-sort-amount-up"></i>
+                    </div>
+                    <div>
+                        <p class="high-price">0 €</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="advanced-search">
@@ -76,7 +95,7 @@
                 </div>
                 <div class="icon-text">
                     <div>
-                        🅷
+                        <i class="fas fa-fw fa-hospital-symbol"></i>
                     </div>
                     <div>
                         <p> Departure Zone</p>
@@ -92,18 +111,13 @@
                         <input type="text" name="engine">
                     </div>
                 </div>
+
                 <div class="icon-text">
-                    <div>
-                        <i class="fas fa-fw fa-user-tie"></i>
-                    </div>
-                    <div>
-                        <p> Pilot</p>
-                        <input type="number" name="pilot">
-                    </div>
                 </div>
+
                 <div class="icon-text">
                     <div>
-                        🎿
+                        <i class="fas fa-fw fa-skiing"></i>
                     </div>
                     <div>
                         <p> Ski</p>
@@ -115,29 +129,11 @@
                 </div>
                 <div class="icon-text">
                     <div>
-                        🅷
+                        <i class="fas fa-fw fa-hospital-symbol"></i>
                     </div>
                     <div>
                         <p> Arrival Zone</p>
                         <input type="text" name="arrival-zone">
-                    </div>
-                </div>
-            </div>
-            <div class="price">
-                <div class="icon-text">
-                    <div>
-                        <i class="fas fa-fw fa-sort-amount-down"></i>
-                    </div>
-                    <div>
-                        <p class="low-price">0 €</p>
-                    </div>
-                </div>
-                <div class="icon-text">
-                    <div>
-                        <i class="fas fa-fw fa-sort-amount-up"></i>
-                    </div>
-                    <div>
-                        <p class="high-price">0 €</p>
                     </div>
                 </div>
             </div>
@@ -147,30 +143,117 @@
     </div>
 
     <div class="content">
-        <div>
-            <h1>Operator</h1>
-            <div class="icon-text">
+
+        <div class="row">
+            <div class="main">
                 <div>
-                    <i class="fas fa-fw fa-helicopter"></i>
+                    <h1>Heli alp</h1>
                 </div>
                 <div>
-                    <p> Helicopter type</p>
-                    <p>H130</p>
+                    <div class="icon-text">
+                        <div>
+                            <i class="fas fa-fw fa-helicopter"></i>
+                        </div>
+                        <div>
+                            <p> h130</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="icon-text">
+                        <div>
+                            <i class="fas fa-fw fa-users"></i>
+                        </div>
+                        <div>
+                            <p> 5</p>
+                        </div>
+                    </div>
+                    <p class="warning">*Max capacity assuming single pilot operation</p>
+                </div>
+
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Official Price</th>
+                        <th>Luna Price</th>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-fw fa-user-tie"></i></td>
+                        <td>5 000€</td>
+                        <td>4 000€</td>
+                    </tr>
+                    <tr>
+                        <td><i class="fas fa-fw fa-user-tie"></i><i class="fas fa-fw fa-user-tie"></i></td>
+                        <td>5 000€</td>
+                        <td>4 000€</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="secondary">
+                <div>
+                    <div class="icon-text">
+                        <div>
+                            <i class="fas fa-fw fa-cogs"></i>
+                        </div>
+                        <div>
+                            <p>Double</p>
+                        </div>
+                    </div>
+                    <div class="icon-text">
+                        <div>
+                            <i class="fas fa-fw fa-hospital-symbol"></i>
+                        </div>
+                        <div>
+                            <p> Departure Zone</p>
+                        </div>
+                    </div>
+                    <div class="icon-text">
+                        <div>
+                            <i class="fas fa-fw fa-suitcase"></i>
+                        </div>
+                        <div>
+                            <p> Luggage</p>
+                        </div>
+                    </div>
+                    <div class="icon-text">
+                        <div>
+                            <i class="fas fa-fw fa-hospital-symbol"></i>
+                        </div>
+                        <div>
+                            <p> Arrival Zone</p>
+                        </div>
+                    </div>
+                    <div class="icon-text">
+                        <div>
+                            <i class="fas fa-fw fa-skiing"></i>
+                        </div>
+                        <div>
+                            <p> Ski</p>
+                        </div>
+                    </div>
+                    <div class="icon-text">
+                        <div>
+                            <i class="fas fa-fw fa-fw fa-stopwatch"></i>
+                        </div>
+                        <div>
+                            <p> Flight Time</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper, libero a laoreet
+                    dignissim, risus sem euismod metus, eu hendrerit erat orci nec lacus.</p>
+                <div>
+                    <img src="https://c.eu12.content.force.com/servlet/servlet.FileDownload?file=0151r000006oMiw"
+                        alt="">
                 </div>
             </div>
-            <div class="icon-text">
-                <div>
-                    <i class="fas fa-fw fa-users"></i>
-                </div>
-                <div>
-                    <p> Capacity</p>
-                    <p>5</p>
-                </div>
-            </div>
-            <table>
-                
-            </table>
+
+
         </div>
+
     </div>
 
     <script src="script.js" defer></script>
