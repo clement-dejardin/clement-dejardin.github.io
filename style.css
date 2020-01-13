@@ -110,6 +110,7 @@ button {
 }
 
 .advanced-search {
+    transform: scale(0);
     display: grid;
     margin: 1em 0;
     gap: 1em;
@@ -152,6 +153,7 @@ button {
     display: grid;
     grid-template-columns: 1fr 1fr 200px;
     align-items: center;
+    transform: scale(0);
 }
 
 .row .secondary > div:nth-of-type(1) {
