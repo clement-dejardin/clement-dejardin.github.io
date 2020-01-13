@@ -26,7 +26,7 @@
                         <i class="fas fa-fw fa-plane-departure"></i>
                     </div>
                     <div>
-                        <p> From</p>
+                        <p> From </p>
                         <input type="text" class="city1">
                     </div>
                 </div>
@@ -35,22 +35,26 @@
                         <i class="fas fa-fw fa-plane-arrival"></i>
                     </div>
                     <div>
-                        <p> To</p>
+                        <p> To </p>
                         <input type="text" class="city2">
                     </div>
                 </div>
 
-                <button id="search">Search</button>
+                <div style="display: grid; grid-template-columns: 1fr 1fr;">
+                    <button>Search</button>
+                    <button>Advanced Search</button>
+                </div>
 
             </div>
 
             <div class="price">
+                <p> <b>Price range</b> </p>
                 <div class="icon-text">
                     <div>
                         <i class="fas fa-fw fa-sort-amount-down"></i>
                     </div>
                     <div>
-                        <p class="low-price">0 €</p>
+                        <p class="low-price">5 000 €</p>
                     </div>
                 </div>
                 <div class="icon-text">
@@ -58,7 +62,7 @@
                         <i class="fas fa-fw fa-sort-amount-up"></i>
                     </div>
                     <div>
-                        <p class="high-price">0 €</p>
+                        <p class="high-price">5 000 €</p>
                     </div>
                 </div>
             </div>
@@ -99,7 +103,10 @@
                     </div>
                     <div>
                         <p> Departure Zone</p>
-                        <input type="text" name="departure-zone">
+                        <select name="departure-zone">
+                            <option value="Prevessins">Prevessins</option>
+                            <option value="Airport">Airport</option>
+                        </select>
                     </div>
                 </div>
                 <div class="icon-text">
@@ -108,7 +115,10 @@
                     </div>
                     <div>
                         <p> Engine type</p>
-                        <input type="text" name="engine">
+                        <select name="enginge-type">
+                            <option value="Single">Single</option>
+                            <option value="Twin">Twin</option>
+                        </select>
                     </div>
                 </div>
 
@@ -117,10 +127,10 @@
 
                 <div class="icon-text">
                     <div>
-                        <i class="fas fa-fw fa-skiing"></i>
+                        <i class="fas fa-fw fa-luggage-cart"></i>
                     </div>
                     <div>
-                        <p> Ski</p>
+                        <p> Sport Equipment </p>
                         <select name="ski">
                             <option value="No">No</option>
                             <option value="Yes">Yes</option>
@@ -133,7 +143,9 @@
                     </div>
                     <div>
                         <p> Arrival Zone</p>
-                        <input type="text" name="arrival-zone">
+                        <select name="arrival-zone">
+                            <option value="Airport">Altiport</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -148,6 +160,9 @@
             <div class="main">
                 <div>
                     <h1>Heli alp</h1>
+                    <div>
+                        <i class="fas fa-fw fa-phone-alt"></i> <i class="fas fa-fw fa-envelope"></i>
+                    </div>
                 </div>
                 <div>
                     <div class="icon-text">
@@ -179,12 +194,12 @@
                         <th>Luna Price</th>
                     </tr>
                     <tr>
-                        <td><i class="fas fa-fw fa-user-tie"></i></td>
+                        <td><i class="fas fa-fw fa-user-tie"></i>1 Pilot</td>
                         <td>5 000€</td>
                         <td>4 000€</td>
                     </tr>
                     <tr>
-                        <td><i class="fas fa-fw fa-user-tie"></i><i class="fas fa-fw fa-user-tie"></i></td>
+                        <td><i class="fas fa-fw fa-user-tie"></i>2 Pilots</td>
                         <td>5 000€</td>
                         <td>4 000€</td>
                     </tr>
@@ -198,7 +213,8 @@
                             <i class="fas fa-fw fa-cogs"></i>
                         </div>
                         <div>
-                            <p>Double</p>
+                            <p> Engine </p>
+                            <p>Twin</p>
                         </div>
                     </div>
                     <div class="icon-text">
@@ -206,7 +222,8 @@
                             <i class="fas fa-fw fa-hospital-symbol"></i>
                         </div>
                         <div>
-                            <p> Departure Zone</p>
+                            <p> Departure Zone </p>
+                            <p>Prevessins</p>
                         </div>
                     </div>
                     <div class="icon-text">
@@ -214,7 +231,8 @@
                             <i class="fas fa-fw fa-suitcase"></i>
                         </div>
                         <div>
-                            <p> Luggage</p>
+                            <p> Luggage </p>
+                            <p>5</p>
                         </div>
                     </div>
                     <div class="icon-text">
@@ -222,15 +240,17 @@
                             <i class="fas fa-fw fa-hospital-symbol"></i>
                         </div>
                         <div>
-                            <p> Arrival Zone</p>
+                            <p> Arrival Zone </p>
+                            <p>Airport</p>
                         </div>
                     </div>
                     <div class="icon-text">
                         <div>
-                            <i class="fas fa-fw fa-skiing"></i>
+                            <i class="fas fa-fw fa-luggage-cart"></i>
                         </div>
                         <div>
-                            <p> Ski</p>
+                            <p> Sport Equipment </p>
+                            <p>Yes</p>
                         </div>
                     </div>
                     <div class="icon-text">
@@ -238,7 +258,8 @@
                             <i class="fas fa-fw fa-fw fa-stopwatch"></i>
                         </div>
                         <div>
-                            <p> Flight Time</p>
+                            <p> Flight Time </p>
+                            <p>1h 00</p>
                         </div>
                     </div>
                 </div>
@@ -246,12 +267,9 @@
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper, libero a laoreet
                     dignissim, risus sem euismod metus, eu hendrerit erat orci nec lacus.</p>
                 <div>
-                    <img src="https://c.eu12.content.force.com/servlet/servlet.FileDownload?file=0151r000006oMiw"
-                        alt="">
+                    <img src="https://c.eu12.content.force.com/servlet/servlet.FileDownload?file=0151r000006oMiw">
                 </div>
             </div>
-
-
         </div>
 
     </div>

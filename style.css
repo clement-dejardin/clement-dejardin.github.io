@@ -64,6 +64,7 @@ th {
 td {
     text-align: center;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 td:nth-of-type(2) {
@@ -80,6 +81,7 @@ button {
     box-shadow: 0 2px 5px rgba(30, 30, 30, .6);
     font: inherit;
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .top-search {
@@ -96,7 +98,7 @@ button {
     box-shadow: 0 2px 5px rgba(30, 30, 30, .6);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    justify-items: center;
+    justify-items: left;
     align-items: center;
 }
 
@@ -110,7 +112,6 @@ button {
 }
 
 .advanced-search {
-    transform: scale(0);
     display: grid;
     margin: 1em 0;
     gap: 1em;
@@ -150,10 +151,10 @@ button {
 }
 
 .row .secondary {
-    display: grid;
+    display: none;
     grid-template-columns: 1fr 1fr 200px;
     align-items: center;
-    transform: scale(0);
+    margin-top: 1em;
 }
 
 .row .secondary > div:nth-of-type(1) {
@@ -192,6 +193,10 @@ button {
 
 .icon-text>div:last-of-type{
     width: 100%;
+}
+
+.icon-text>div:last-of-type>p:first-of-type{
+    font-weight: 600;
 }
 
 .warning {
