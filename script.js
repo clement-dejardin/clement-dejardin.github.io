@@ -27,7 +27,7 @@ fetch(endpoint)
     .then(blob => blob.json())
     .then(stuff => data.push(...stuff))
 
-// Search from and to
+// Search From and To
 function seachFromTo(from, to ,data) {
     return data.filter(route => {
         const regex1 = new RegExp(from, 'gi')
@@ -164,4 +164,4 @@ function displayMatches() {
     document.querySelector('.content').innerHTML = html
 }
 
-// Run displayMatches when typing in input
+// Run displayMatches when typing in inpu

@@ -91,7 +91,7 @@ button {
     gap: 1em;
 }
 
-.search {
+div.search {
     background: white;
     padding: 1em;
     border-radius: 5px;
