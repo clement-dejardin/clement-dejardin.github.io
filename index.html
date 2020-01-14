@@ -8,10 +8,10 @@
     <meta name="robots" content="noindex">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="https://kit.fontawesome.com/1a2e71136c.js" crossorigin="anonymous"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <script src="https://kit.fontawesome.com/1a2e71136c.js" crossorigin="anonymous"></script>
     <title>LunaCopter</title>
 </head>
 
@@ -27,7 +27,7 @@
                     </div>
                     <div>
                         <p> From </p>
-                        <input type="text" class="city1">
+                        <input type="text" class="from">
                     </div>
                 </div>
                 <div class="icon-text">
@@ -36,13 +36,13 @@
                     </div>
                     <div>
                         <p> To </p>
-                        <input type="text" class="city2">
+                        <input type="text" class="to">
                     </div>
                 </div>
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr;">
-                    <button>Search</button>
-                    <button>Advanced Search</button>
+                    <button class="search">Search</button>
+                    <button class="advanced-search">Advanced Search</button>
                 </div>
 
             </div>
@@ -76,7 +76,7 @@
                     </div>
                     <div>
                         <p> Helicopter type</p>
-                        <input type="text" name="helicopter">
+                        <input type="text" class="helicopter">
                     </div>
                 </div>
                 <div class="icon-text">
@@ -85,7 +85,7 @@
                     </div>
                     <div>
                         <p> Pax</p>
-                        <input type="text" name="pax">
+                        <input type="text" class="pax">
                     </div>
                 </div>
                 <div class="icon-text">
@@ -94,7 +94,7 @@
                     </div>
                     <div>
                         <p> Luggage</p>
-                        <input type="text" name="luggage">
+                        <input type="text" class="luggage">
                     </div>
                 </div>
                 <div class="icon-text">
@@ -103,7 +103,7 @@
                     </div>
                     <div>
                         <p> Departure Zone</p>
-                        <select name="departure-zone">
+                        <select class="departure-zone">
                             <option value="Prevessins">Prevessins</option>
                             <option value="Airport">Airport</option>
                         </select>
@@ -115,7 +115,7 @@
                     </div>
                     <div>
                         <p> Engine type</p>
-                        <select name="enginge-type">
+                        <select class="enginge-type">
                             <option value="Single">Single</option>
                             <option value="Twin">Twin</option>
                         </select>
@@ -131,7 +131,7 @@
                     </div>
                     <div>
                         <p> Sport Equipment </p>
-                        <select name="ski">
+                        <select class="sport">
                             <option value="No">No</option>
                             <option value="Yes">Yes</option>
                         </select>
@@ -143,7 +143,7 @@
                     </div>
                     <div>
                         <p> Arrival Zone</p>
-                        <select name="arrival-zone">
+                        <select class="arrival-zone">
                             <option value="Airport">Altiport</option>
                         </select>
                     </div>
@@ -265,7 +265,8 @@
                 </div>
 
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper, libero a laoreet
-                    dignissim, risus sem euismod metus, eu hendrerit erat orci nec lacus.</p>
+                    dignissim, risus sem euismod metus, eu hendrerit erat orci nec lacus.
+                </p>
                 <div>
                     <img src="https://c.eu12.content.force.com/servlet/servlet.FileDownload?file=0151r000006oMiw">
                 </div>

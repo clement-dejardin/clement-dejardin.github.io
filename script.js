@@ -1,10 +1,3 @@
-// Get data
-endpoint = 'https://clement-dejardin.github.io/data.json'
-const data = []
-fetch(endpoint)
-    .then(blob => blob.json())
-    .then(stuff => data.push(...stuff))
-
 // Sorting function
 var sortBy = function (property) {
     return function (x, y) {
@@ -12,161 +5,158 @@ var sortBy = function (property) {
     };
 };
 
-// Search between 2 city
-function findMatches(city1, city2 ,data) {
-    return data.filter(place => {
-        const regex1 = new RegExp(city1, 'gi')
-        const regex2 = new RegExp(city2, 'gi')
-        return place.Departure.match(regex1) && place.Arrival.match(regex2) && place.Pax >= searchInputPax.value && place.Pilot == searchInputPilot.value
+// Input list
+const from = document.querySelector('.from')
+const to = document.querySelector('.to')
+const helicopter = document.querySelector('.helicopter')
+const pax = document.querySelector('.pax')
+const luggage = document.querySelector('.luggage')
+const departureZone = document.querySelector('.departure-zone')
+const engine = document.querySelector('.enginge-type')
+const sport = document.querySelector('.sport')
+const arrivalZone = document.querySelector('.arrival-zone')
+
+// Button
+const search = document.querySelector('.search')
+const advancedSearch = document.querySelector('.advanced-search')
+
+// Get data
+endpoint = 'https://clement-dejardin.github.io/data.json'
+const data = []
+fetch(endpoint)
+    .then(blob => blob.json())
+    .then(stuff => data.push(...stuff))
+
+// Search from and to
+function seachFromTo(from, to ,data) {
+    return data.filter(route => {
+        const regex1 = new RegExp(from, 'gi')
+        const regex2 = new RegExp(to, 'gi')
+        return route.Departure.match(regex1) && route.Arrival.match(regex2)
     })
 }
 
 // Dispay the result
 function displayMatches() {
-    const matchArray = findMatches(searchInputCity1.value, searchInputCity2.value, data)
+    const matchArray = searchFromTo(from.value, to.value, data)
     // Sort matchArray by price
     matchArray.sort(sortBy('Single_Pilot_Official_Price'))
-    const html = matchArray.map(place => {
+    const html = matchArray.map(route => {
         return `
-    <div>
-        <div>
-            <h1>${place.Operator}</h1>
-            <table class="from-to">
-                <tr>
-                    <td>
-                        <div class="icon-text">
-                            <div>
-                                🛫
-                            </div>
-                            <div>
-                                <b>From</b> <br>
-                                ${place.Departure}
-                            </div>
-                        </div>
-                        <div class="icon-text">
-                            <div>
-                                🅷
-                            </div>
-                            <div>
-                                <a href="${place.Departure_Coord}" target="_blank">${place.Departure_Helistation}
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="icon-text">
-                            <div>
-                                ⏱
-                            </div>
-                            <div>
-                                <b>Flight Time</b> <br>
-                                ${place.Flight_Time}
-                            </div>
-                        </div>
-                    </td>
-                    <td>
-                        <div class="icon-text">
-                            <div>
-                                🛫
-                            </div>
-                            <div>
-                                <b>To</b> <br>
-                                ${place.Arrival}
-                            </div>
-                        </div>
-                        <div class="icon-text">
-                            <div>
-                                🅷
-                            </div>
-                            <div>
-                                <a href="${place.Arrival_Coord}" target="_blank">${place.Arrival_Helistation}
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-    
-            <div style="margin: 2em 1em">
-                <hr>
+    <div class="row">
+        <div class="main">
+            <div>
+                <h1>Heli alp</h1>
+                <div>
+                    <i class="fas fa-fw fa-phone-alt"></i> <i class="fas fa-fw fa-envelope"></i>
+                </div>
             </div>
-    
-            <div class="info">
-                <div class="helicopter-info">
-                    <div class="icon-text">
-                        <div>
-                            🚁
-                        </div>
-                        <div>
-                            <b>Helicopter Type</b> <br>
-                            ${place.Helicopter}
-                        </div>
+            <div>
+                <div class="icon-text">
+                    <div>
+                        <i class="fas fa-fw fa-helicopter"></i>
                     </div>
-                    
-                    <div class="icon-text">
-                        <div>
-                             👨‍✈ 
-                        </div>
-                        <div>
-                            <b>Nbr of Pilot</b> <br>
-                            ${place.Pilot}
-                        </div>
-                    </div>
-    
-                    <div class="icon-text">
-                        <div>
-                            👨 
-                        </div>
-                        <div>
-                            <b>Max Nbr of Pax</b> <br>
-                            ${place.Pax}
-                        </div>
-                    </div>
-    
-                    <div class="icon-text">
-                        <div>
-                            💼 
-                        </div>
-                        <div>
-                            <b> Max Nbr of Luggages</b> <br>
-                            ${place.Luggages}
-                        </div>
-                    </div>
-    
-                    <div class="icon-text">
-                        <div>
-                            🎿 
-                        </div>
-                        <div>
-                            <b>Ski / Snowboard</b> <br>
-                            ${place.Skis}
-                        </div>
+                    <div>
+                        <p> h130</p>
                     </div>
                 </div>
-    
-                <table class="price">
-                    <tr>
-                        <td><b>Official Price</b></td>
-                        <td>${place.Price} ${place.Currency}</td>
-                    </tr>
-                    <tr>
-                        <td><b>LunaJets Discount</b></td>
-                        <td>${place.Discount}</td>
-                    </tr>
-                    <tr>
-                        <td><b>LunaJets Price</b></td>
-                        <td>${place.Price_Discounted} ${place.Currency}</td>
-                    </tr>
-                </table>
             </div>
-    
+
+            <div>
+                <div class="icon-text">
+                    <div>
+                        <i class="fas fa-fw fa-users"></i>
+                    </div>
+                    <div>
+                        <p> 5</p>
+                    </div>
+                </div>
+                <p class="warning">*Max capacity assuming single pilot operation</p>
+            </div>
+
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Official Price</th>
+                    <th>Luna Price</th>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-fw fa-user-tie"></i>1 Pilot</td>
+                    <td>5 000€</td>
+                    <td>4 000€</td>
+                </tr>
+                <tr>
+                    <td><i class="fas fa-fw fa-user-tie"></i>2 Pilots</td>
+                    <td>5 000€</td>
+                    <td>4 000€</td>
+                </tr>
+            </table>
         </div>
-        <div>
-            <img src="${place.Picture}">
-            <p>
-                📞 <a href="tel:${place.Phone}">${place.Phone}
+
+        <div class="secondary">
+            <div>
+                <div class="icon-text">
+                    <div>
+                        <i class="fas fa-fw fa-cogs"></i>
+                    </div>
+                    <div>
+                        <p> Engine </p>
+                        <p>Twin</p>
+                    </div>
+                </div>
+                <div class="icon-text">
+                    <div>
+                        <i class="fas fa-fw fa-hospital-symbol"></i>
+                    </div>
+                    <div>
+                        <p> Departure Zone </p>
+                        <p>Prevessins</p>
+                    </div>
+                </div>
+                <div class="icon-text">
+                    <div>
+                        <i class="fas fa-fw fa-suitcase"></i>
+                    </div>
+                    <div>
+                        <p> Luggage </p>
+                        <p>5</p>
+                    </div>
+                </div>
+                <div class="icon-text">
+                    <div>
+                        <i class="fas fa-fw fa-hospital-symbol"></i>
+                    </div>
+                    <div>
+                        <p> Arrival Zone </p>
+                        <p>Airport</p>
+                    </div>
+                </div>
+                <div class="icon-text">
+                    <div>
+                        <i class="fas fa-fw fa-luggage-cart"></i>
+                    </div>
+                    <div>
+                        <p> Sport Equipment </p>
+                        <p>Yes</p>
+                    </div>
+                </div>
+                <div class="icon-text">
+                    <div>
+                        <i class="fas fa-fw fa-fw fa-stopwatch"></i>
+                    </div>
+                    <div>
+                        <p> Flight Time </p>
+                        <p>1h 00</p>
+                    </div>
+                </div>
+            </div>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ullamcorper, libero a laoreet
+                dignissim, risus sem euismod metus, eu hendrerit erat orci nec lacus.
             </p>
-            <p>
-                📧 <a href="mailto:${place.Email}">${place.Email}</a>
-            </p>
+            <div>
+                <img src="https://c.eu12.content.force.com/servlet/servlet.FileDownload?file=0151r000006oMiw">
+            </div>
         </div>
     </div>
         `
@@ -175,10 +165,3 @@ function displayMatches() {
 }
 
 // Run displayMatches when typing in input
-const searchInputCity1 = document.querySelector('.city1')
-const searchInputCity2 = document.querySelector('.city2')
-
-searchInputCity1.addEventListener('change', displayMatches)
-searchInputCity2.addEventListener('change', displayMatches)
-searchInputPax.addEventListener('change', displayMatches)
-searchInputPilot.addEventListener('change', displayMatches)

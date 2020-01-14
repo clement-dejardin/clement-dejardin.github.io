@@ -151,7 +151,7 @@ button {
 }
 
 .row .secondary {
-    display: none;
+    display: grid;
     grid-template-columns: 1fr 1fr 200px;
     align-items: center;
     margin-top: 1em;
@@ -159,6 +159,7 @@ button {
 
 .row .secondary > div:nth-of-type(1) {
     display: grid;
+    
     grid-template-columns: 1fr 1fr;
 }
 
