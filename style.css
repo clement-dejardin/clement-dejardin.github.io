@@ -1,208 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Playball&display=swap');
 * {
     box-sizing: border-box;
 }
 
-html {
-    box-sizing: border-box;
-    background: #b6cada;
-    color: #263d50;
-    font-family: 'Open Sans';
-    font-size: 18px;
-    font-weight: 400;
-}
-
-a {
-    color: inherit;
-    text-decoration: none;
-}
-
-b {
-    font-weight: 700;
-}
-
-input {
-    width: 100%;
-    padding: 10px;
-    border: 0;
-    font-family: inherit;
-    background: white;
-    padding: 1em;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(30, 30, 30, .6)
-}
-
-select {
-    width: 100%;
-    height: 37px;
-    padding: 10px;
-    border: 0;
-    font-family: inherit;
-    background: white;
-    padding: 1em;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(30, 30, 30, .6)
-}
-
-.head h1 {
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    
+    font-family: 'Open Sans', sans-serif;
+    font-size: 2rem;
+    color: #242424;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
     text-align: center;
-    font-size: 200%;
-    font-size: 72px;
-    margin: 0 0 .5em 0
+    
+    background-image: linear-gradient(120deg, #fbc2eb 0%, #a6c1ee 100%);
+}
+
+h1 {
+    font-family: 'Playball', cursive;
+    font-size: 6vw;
+    margin: 20vh 0 0 0;
+    text-shadow: 3px 2px 0px #fff, 6px 4px 0px rgba(0,0,0,0.15);
 }
 
 p {
-    margin: .25em;
-}
-
-table {
-    width: 100%;
-}
-th {
-    font-weight: 300;
-    font-size: 80%;
-}
-td {
-    text-align: center;
-    font-weight: 600;
-    white-space: nowrap;
-}
-
-td:nth-of-type(2) {
-    color: #B51F24;
-}
-
-button {
-    border: 0;
-    background-color: #263d50;
-    color: white;
-    padding: .5em 1em;
-    margin: 1em;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(30, 30, 30, .6);
-    font: inherit;
-    cursor: pointer;
-    white-space: nowrap;
-}
-
-.top-search {
-    display: grid;
-    grid-template-columns: 1fr 200px;
-    align-items: stretch;
-    gap: 1em;
-}
-
-div.search {
-    background: white;
-    padding: 1em;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(30, 30, 30, .6);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-items: left;
-    align-items: center;
-}
-
-.search p {
-    font-size: 125%;
-}
-
-.search>div {
-    width: 80%;
-    max-width: 250px;
-}
-
-.advanced-search {
-    display: grid;
-    margin: 1em 0;
-    gap: 1em;
-}
-
-.filter {
-    background: white;
-    padding: 1em;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(30, 30, 30, .6);
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    gap: 1em;
-}
-
-.price {
-    background: white;
-    padding: 1em;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(30, 30, 30, .6);
-    display: grid;
-}
-
-.row {
-    background: white;
-    padding: 1em;
-    margin: 1em 0;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(30, 30, 30, .6);
-}
-
-.row .main {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    justify-items: left;
-    align-items: center;
-}
-
-.row .secondary {
-    display: grid;
-    grid-template-columns: 1fr 1fr 200px;
-    align-items: center;
-    margin-top: 1em;
-}
-
-.row .secondary > div:nth-of-type(1) {
-    display: grid;
-    
-    grid-template-columns: 1fr 1fr;
-}
-
-.row .secondary > p {
-    padding: 1em;
-    font-size: 80%;
-}
-
-.row .secondary > div:nth-of-type(2) {
-    display: grid;
-    justify-items: center;
-    height: 100%;
-}
-
-.row .secondary img {
-    max-height: 100%;
-}
-
-.content h1 {
-    margin: 0;
-}
-
-.icon-text {
-    display: flex;
-    align-items: center;
-}
-
-.icon-text>div:first-of-type {
-    font-size: 2em;
-    padding: 0 .5em;
-}
-
-.icon-text>div:last-of-type{
-    width: 100%;
-}
-
-.icon-text>div:last-of-type>p:first-of-type{
-    font-weight: 600;
-}
-
-.warning {
-    font-size: 50%;
-    color: #B51F24;
-    position: absolute;
-    font-weight: 600;
+    text-shadow: 3px 2px 0px rgba(0,0,0,0.15);
+    font-weight: bold;
 }
