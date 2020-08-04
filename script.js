@@ -29,10 +29,10 @@ var x = setInterval(function () {
 }, 1000);
 
 // Time together
-var bday = new Date("10/07/20").getTime();
+var bday = new Date("07/10/20").getTime();
 var z = setInterval(function () {
     var bnow = new Date().getTime();
-    var tillbday = bday - bnow;
+    var tillbday = bnow - bday;
     var bdays = Math.floor(tillbday / (1000 * 60 * 60 * 24));
     if (bdays < 10) {
         bdays = '0' + bdays
