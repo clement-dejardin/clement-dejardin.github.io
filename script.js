@@ -29,7 +29,7 @@ var x = setInterval(function () {
 }, 1000);
 
 // Time together
-var bday = new Date("07/10/20").getTime();
+var bday = new Date("Jul 10, 2020").getTime();
 var z = setInterval(function () {
     var bnow = new Date().getTime();
     var tillbday = bnow - bday;
