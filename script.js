@@ -1,5 +1,5 @@
 // Time to next rendez-vous
-var nextrdv = new Date("October 09, 2021 12:00:00").getTime();
+var nextrdv = new Date("Dec 19, 2021 12:00:00").getTime();
 var x = setInterval(function () {
     var now = new Date().getTime();
     var tonextrdv = nextrdv - now;
