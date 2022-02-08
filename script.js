@@ -1,5 +1,18 @@
+// Time together
+var bday = new Date("Jul 10, 2020").getTime();
+
+var bnow = new Date().getTime();
+var tillbday = bnow - bday;
+var tdays = Math.floor(tillbday / (1000 * 60 * 60 * 24));
+var byear = Math.floor(tdays / 360)
+tdays = tdays % 360
+var bmonths = Math.floor(tdays / 30.66)
+tdays = Math.floor(tdays % 30)
+document.getElementById("together").innerHTML = byear + " an - " + bmonths + " mois - " + tdays + " jours";
+
+
 // Time to next rendez-vous
-var nextrdv = new Date("Dec 22, 2021 12:00:00").getTime();
+var nextrdv = new Date("Feb 20, 2022 18:00:00").getTime();
 var x = setInterval(function () {
     var now = new Date().getTime();
     var tonextrdv = nextrdv - now;
@@ -26,16 +39,4 @@ var x = setInterval(function () {
         document.getElementById("nextrdv").innerHTML = "I Love You";
     }
 
-}, 1000);
-
-// Time together
-var bday = new Date("Jul 10, 2020").getTime();
-var z = setInterval(function () {
-    var bnow = new Date().getTime();
-    var tillbday = bnow - bday;
-    var bdays = Math.floor(tillbday / (1000 * 60 * 60 * 24));
-    if (bdays < 10) {
-        bdays = '0' + bdays
-    }
-    document.getElementById("together").innerHTML = bdays + " jours"
 }, 1000);
